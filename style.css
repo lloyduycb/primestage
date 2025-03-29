@@ -1,0 +1,542 @@
+/* Global Resets & Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* Hides the horizontal scrollbar */
+    overflow-y: auto;
+    /* Keeps or shows the vertical scrollbar as needed */
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensures wrapper stretches full page height */
+}
+
+main {
+    flex: 1;
+    /* Takes up remaining space */
+}
+
+.martian-mono {
+    font-family: "Martian Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a {
+    color: #010100;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.logo img {
+    width: 100px;
+}
+
+/* Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fefeff;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.main-header nav ul li {
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.main-header nav ul li a {
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+}
+
+.main-header nav ul li a.active,
+.main-header nav ul li a:hover {}
+
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    min-height: 80vh;
+    /* or 100vh if you want it to fill the entire viewport */
+    background: url("ALBUM ART.jpg") center center no-repeat;
+    background-size: cover;
+    /* or contain, if you want to show the entire image */
+
+    /* Flex layout to center content */
+    display: flex;
+    align-items: center;
+    /* Vertical center */
+    justify-content: center;
+    /* Horizontal center */
+    text-align: center;
+}
+
+/* Optional overlay for darkening the background */
+.hero-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* The container for hero text/buttons */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    /* Above the ::after overlay */
+    max-width: 800px;
+    /* Optional: limit width for readability */
+    color: #fff;
+    padding: 1rem;
+}
+
+
+/* The heading using Bebas Neue */
+.hero-content h1.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 7rem;
+    /* Adjust as needed */
+    margin-bottom: 1rem;
+}
+
+/* The button (class="btn-primary") */
+.btn-primary {
+    display: inline-block;
+    background-color: transparent;
+    color: #fefeff;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid #fefeff;
+    border-radius: 40px;
+    font-weight: bold;
+    font-family: "Martian Mono", monospace;
+    /* or whichever font you prefer */
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    curSOR: pointer;
+}
+
+/* Hover effect for the button */
+.btn-primary:hover {
+    background-color: #ffffff;
+    color: #001F46;
+}
+
+
+/* Highlight / Cards */
+.highlight {
+    padding: 2rem;
+}
+
+.highlight-info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.highlight-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    /* Align text to the left */
+}
+
+.highlight-info p {
+    font-size: 1.2rem;
+    color: #414140;
+    text-align: left;
+    /* Align text to the left */
+    margin-bottom: 1rem;
+}
+
+.release-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.release-card {
+    width: 200px;
+    text-align: center;
+}
+
+.release-card img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+/* Page Banner */
+.page-banner {
+    padding: 2rem 2rem;
+    background-color: #FEFEFF;
+    text-align: center;
+}
+
+.page-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Release Grid */
+.release-item {
+    position: relative;
+    /* allows absolutely-positioned child */
+    display: inline-block;
+    width: 100%;
+    max-width: 600px;
+    /* optional: limit how wide the image can go */
+    margin: 0 auto;
+    /* optional: center the container */
+    overflow: hidden;
+    /* hide overflow if needed */
+    transition: transform 0.3s ease;
+}
+
+/* Ensure the image fills the container */
+.release-item img {
+    width: 100%;
+    display: block;
+    border-radius: var(--border-radius);
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    transition: transform 0.3s ease;
+}
+
+.release-item:hover {
+    transform: scale(1.05);
+}
+
+/* New overlay container for the text */
+.release-info {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    z-index: 2;
+    /* Higher than .dark-overlay */
+    color: #fefeff;
+    font-family: "Martian Mono", monospace;
+    font-size: 1rem;
+    line-height: 1.2;
+    padding: 10px;
+    text-align: left;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+
+.release-info h3 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    /* Adjust opacity as needed */
+    z-index: 1;
+    /* Positioned below the text overlay (.release-info) */
+    transition: opacity 0.3s ease;
+}
+
+/* Fade out the dark overlay on hover */
+.release-item:hover .dark-overlay {
+    opacity: 0;
+}
+
+.release-info p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+}
+
+.swiper-pagination {
+    display: none !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    z-index: 10;
+    /* Brings them to the front */
+    color: #fff;
+    /* Set to a contrasting color */
+    transform: translate(-50%);
+}
+
+/* Position them (adjust values as needed) */
+.swiper-button-prev {
+    left: 10px;
+}
+
+.swiper-button-next {
+    right: 10px;
+}
+
+/* Optional: Increase their size */
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    font-size: 2rem;
+}
+
+/* 1) Artist Grid Layout */
+.artist-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Tablet (>= 768px) */
+@media (min-width: 768px) {
+    .artist-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop (>= 1024px) */
+@media (min-width: 1024px) {
+    .artist-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 2) Artist Card Styling */
+.artist-card {
+    position: relative;
+    /* Needed so absolute elements are positioned inside */
+    /* width: 300px;       Example width; adjust as needed */
+    overflow: hidden;
+    /* Hides anything going outside the card bounds */
+    border-radius: 20px;
+    /* Optional rounding for corners */
+    text-align: left;
+    /* If you prefer left-aligned text on the overlay */
+    margin: 0 auto;
+    /* Center the card, if you like */
+    
+}
+
+.artist-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    /* Match the card rounding */
+}
+
+/* The overlay that goes on top of the image */
+.artist-info {
+    position: absolute;
+    bottom: 0;
+    /* or top: 50%, left: 50%, etc. if you want it centered */
+    left: 0;
+    width: 100%;
+    color: #fff;
+    /* Text color */
+    padding: 1rem;
+    box-sizing: border-box;
+    /* If you don't want a background behind the text, remove the background-color */
+}
+
+.artist-info h3,
+.artist-info p {
+    margin: 0 0 0.25rem;
+}
+
+.artist-info h3 {
+    font-size: 3.5rem;
+    /* Adjust as needed */
+}
+
+.artist-info p {
+    font-size: 0.1 rem;
+    /* Adjust as needed */
+    display: inline-block;
+    /* Allows the element to shrink to fit content */
+    background-color: #414140;
+    /* Dark gray background (adjust as needed) */
+    color: #fff;
+    /* White text */
+    padding: 0.25rem 0.5rem;
+    /* Top/bottom, left/right spacing */
+    border-radius: 40px;
+    /* Slightly rounded corners */
+    font-size: 0.9rem;
+    /* Adjust text size as needed */
+    margin: 0;
+}
+
+/* Artist Hero */
+.artist-hero {
+    position: relative;
+    text-align: center;
+}
+
+.artist-hero img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.artist-hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.artist-hero-text h1 {
+    font-size: 2.5rem;
+}
+
+/* Artist Details */
+.artist-details {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.bio,
+.tracks {
+    flex: 1;
+    margin: 1rem;
+}
+
+.bio h2,
+.tracks h2 {
+    margin-bottom: 1rem;
+}
+
+.tracks ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #414140;
+    /* Dark gray */
+    color: #fefeff;
+    /* Off-white */
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+}
+
+/* Flex container for the top part of the footer */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Logo sizing */
+.footer-logo {
+    max-height: 50px;
+}
+
+/* Social Icons container */
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Social icons styling */
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 20px;
+    padding: 0.5rem;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    margin: 0 5px;
+}
+
+.social-icons .fa {
+    font-size: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: #fefeff;
+    transition: background-color 0.2s;
+    padding: 0.5rem;
+}
+
+.social-icons a:hover {
+    background-color: #fefeff;
+    border-color: #fefeff;
+}
+
+.social-icons a:hover img {
+    filter: invert(1);
+}
+
+/* Horizontal line styling */
+.footer-divider {
+    border: none;
+    border-top: 1px solid #fefeff;
+    margin: 1rem 0;
+}
+
+/* Bottom text */
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .release-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        padding: 1rem;
+    }
+
+    .page-banner h1 {
+        font-size: 1.8rem;
+    }
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
