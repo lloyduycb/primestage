@@ -17,27 +17,37 @@
     <div class="wrapper">
         <!-- HEADER / NAVIGATION -->
         <header class="main-header">
-            <div class="logo">
-                <img src="primestage black.png" />
+            <div class="header-top">
+                <div class="logo">
+                    <img src="primestage black.png" alt="PrimeStage logo" />
+                </div>
+
+                <!-- Move nav here -->
+                <nav class="nav-menu">
+                    <ul>
+                        <li class="martian-mono"><a href="index.html" class="active">Home</a></li>
+                        <li class="martian-mono"><a href="releases.html">Releases</a></li>
+                        <li class="martian-mono"><a href="artist-list.html">Artists</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Hamburger button (for mobile) -->
+                <button class="menu-toggle" aria-label="Toggle Navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
             </div>
-            <nav>
-                <ul>
-                    <li class="martian-mono"><a href="index.html" class="active">Home</a></li>
-                    <li class="martian-mono"><a href="releases.html">Releases</a></li>
-                    <li class="martian-mono"><a href="artist-list.html">Artists</a></li>
-                </ul>
-            </nav>
         </header>
+
 
         <!-- HERO SECTION -->
         <section class="hero-section">
             <div class="hero-content">
-            <h1 class="bebas-neue-regular">PORAATTAM 10 YEARS OF MANJAPPADA</h1>
-            <a class="btn-primary" href="https://youtu.be/lKay8zI04qw?si=xyLnc0VLLT6ycfQD" target="_blank" 
-            rel="noopener noreferrer">CLICK HERE TO WATCH NOW</a>
+                <h1 class="bebas-neue-regular">PORAATTAM 10 YEARS OF MANJAPPADA</h1>
+                <a class="btn-primary" href="https://youtu.be/lKay8zI04qw?si=xyLnc0VLLT6ycfQD" target="_blank"
+                    rel="noopener noreferrer">CLICK HERE TO WATCH NOW</a>
             </div>
         </section>
-        
+
 
         <!-- HIGHLIGHT SECTION -->
         <section class="highlight">
@@ -45,12 +55,14 @@
                 <h2 class="martian-mono">ABOUT PRIMESTAGE RECORDS.</h2>
                 <p class="martian-mono">
                     PrimeStage Records is a music label that brings together the best artists in the industry. We are
-                    committed to creating music that resonates with our audience and inspires them. Our goal is to provide a
+                    committed to creating music that resonates with our audience and inspires them. Our goal is to
+                    provide a
                     platform for artists to showcase their talent and connect with their fans.
                 </p>
-                <p class="martian-mono">    
+                <p class="martian-mono">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id diam justo. Sed
-                    sit amet erat arcu. In vel mi non odio volutpat gravida. Nunc at luctus urna. Suspendisse varius gravida
+                    sit amet erat arcu. In vel mi non odio volutpat gravida. Nunc at luctus urna. Suspendisse varius
+                    gravida
                     neque non lacinia. Cras eu elementum felis. Nullam sagittis eget neque et ultricies.
                 </p>
             </div>
@@ -79,6 +91,8 @@
         </footer>
     </div>
 
+
+    <script src="dropdown.js"></script>
 </body>
 
 </html>

@@ -1,542 +1,563 @@
 /* Global Resets & Basic Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    /* Hides the horizontal scrollbar */
-    overflow-y: auto;
-    /* Keeps or shows the vertical scrollbar as needed */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    /* Ensures wrapper stretches full page height */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 main {
-    flex: 1;
-    /* Takes up remaining space */
+  flex: 1;
 }
 
+/* Typography */
 .martian-mono {
-    font-family: "Martian Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-    font-variation-settings:
-        "wdth" 100;
+  font-family: "Martian Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }
 
 .bebas-neue-regular {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 a {
-    color: #010100;
-    text-decoration: none;
+  color: #010100;
+  text-decoration: none;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
+/* Logo */
 .logo img {
-    width: 100px;
+  width: 100px;
 }
 
 /* Header */
 .main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #fefeff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1000;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+  flex: 1;
 }
 
+.nav-menu {
+  flex: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-menu ul {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-menu ul li a {
+  font-family: "Martian Mono", monospace;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Hide hamburger on desktop */
+.menu-toggle {
+  display: none;
+}
+
+/* Navigation (desktop additional styling) */
 .main-header nav ul li {
-    display: inline-block;
-    margin-left: 1rem;
+  display: inline-block;
+  margin-left: 1rem;
 }
 
 .main-header nav ul li a {
-    padding: 0.5rem 0.8rem;
-    border-radius: 4px;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
 }
 
 .main-header nav ul li a.active,
-.main-header nav ul li a:hover {}
-
+.main-header nav ul li a:hover {
+  /* Active/hover styles if desired */
+}
 
 /* Hero Section */
 .hero-section {
-    position: relative;
-    min-height: 80vh;
-    /* or 100vh if you want it to fill the entire viewport */
-    background: url("ALBUM ART.jpg") center center no-repeat;
-    background-size: cover;
-    /* or contain, if you want to show the entire image */
-
-    /* Flex layout to center content */
-    display: flex;
-    align-items: center;
-    /* Vertical center */
-    justify-content: center;
-    /* Horizontal center */
-    text-align: center;
+  position: relative;
+  min-height: 80vh;
+  background: url("ALBUM ART.jpg") center center no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-/* Optional overlay for darkening the background */
 .hero-section::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 1;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
-/* The container for hero text/buttons */
 .hero-content {
-    position: relative;
-    z-index: 2;
-    /* Above the ::after overlay */
-    max-width: 800px;
-    /* Optional: limit width for readability */
-    color: #fff;
-    padding: 1rem;
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  color: #fff;
+  padding: 1rem;
 }
 
-
-/* The heading using Bebas Neue */
 .hero-content h1.bebas-neue-regular {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-size: 7rem;
-    /* Adjust as needed */
-    margin-bottom: 1rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 7rem;
+  margin-bottom: 1rem;
 }
 
-/* The button (class="btn-primary") */
 .btn-primary {
-    display: inline-block;
-    background-color: transparent;
-    color: #fefeff;
-    padding: 0.8rem 1.2rem;
-    border: 2px solid #fefeff;
-    border-radius: 40px;
-    font-weight: bold;
-    font-family: "Martian Mono", monospace;
-    /* or whichever font you prefer */
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    curSOR: pointer;
+  display: inline-block;
+  background-color: transparent;
+  color: #fefeff;
+  padding: 0.8rem 1.2rem;
+  border: 2px solid #fefeff;
+  border-radius: 40px;
+  font-weight: bold;
+  font-family: "Martian Mono", monospace;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
-/* Hover effect for the button */
 .btn-primary:hover {
-    background-color: #ffffff;
-    color: #001F46;
+  background-color: #ffffff;
+  color: #001f46;
 }
 
+/* MOBILE & RESPONSIVE NAVBAR DROPDOWN */
+@media (max-width: 768px) {
+  /* Ensure the header-top container is relatively positioned */
+  .header-top {
+    position: relative;
+  }
+  
+  /* Show hamburger button */
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  /* Hide the nav-menu by default & position it as a dropdown */
+  .nav-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Right below the header-top */
+    left: 0;
+    width: 100%;
+    background-color: #fefeff;
+    z-index: 10;
+    text-align: center;
+  }
+  
+  /* When active, show the nav-menu */
+  .nav-menu.active {
+    display: block !important;
+  }
+  
+  /* Stack nav links vertically */
+  .nav-menu ul {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 1rem 0;
+  }
+  
+  .nav-menu ul li {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}
+
+
+/* For even smaller devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .main-header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-header nav ul {
+    text-align: center;
+  }
+  .main-header nav ul li {
+    margin: 0.5rem 0;
+  }
+  .hero-content h1.bebas-neue-regular {
+    font-size: 3rem;
+  }
+  .btn-primary {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
 
 /* Highlight / Cards */
 .highlight {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 .highlight-info {
-    text-align: center;
-    margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.highlight-info h2,
+.highlight-info p {
+  text-align: left;
 }
 
 .highlight-info h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-align: left;
-    /* Align text to the left */
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .highlight-info p {
-    font-size: 1.2rem;
-    color: #414140;
-    text-align: left;
-    /* Align text to the left */
-    margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #414140;
+  margin-bottom: 1rem;
 }
 
+/* Releases */
 .release-cards {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .release-card {
-    width: 200px;
-    text-align: center;
+  width: 200px;
+  text-align: center;
 }
 
 .release-card img {
-    width: 100%;
-    border-radius: 4px;
+  width: 100%;
+  border-radius: 4px;
 }
 
-/* Page Banner */
 .page-banner {
-    padding: 2rem 2rem;
-    background-color: #FEFEFF;
-    text-align: center;
+  padding: 2rem 2rem;
+  background-color: #fefeff;
+  text-align: center;
 }
 
 .page-banner h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Release Grid */
 .release-item {
-    position: relative;
-    /* allows absolutely-positioned child */
-    display: inline-block;
-    width: 100%;
-    max-width: 600px;
-    /* optional: limit how wide the image can go */
-    margin: 0 auto;
-    /* optional: center the container */
-    overflow: hidden;
-    /* hide overflow if needed */
-    transition: transform 0.3s ease;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
-/* Ensure the image fills the container */
 .release-item img {
-    width: 100%;
-    display: block;
-    border-radius: var(--border-radius);
-    background: rgba(0, 0, 0, 0.5);
-    /* Semi-transparent background */
-    transition: transform 0.3s ease;
+  width: 100%;
+  display: block;
+  border-radius: var(--border-radius);
+  background: rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
 }
 
 .release-item:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
-/* New overlay container for the text */
 .release-info {
-    position: absolute;
-    bottom: 5%;
-    left: 5%;
-    z-index: 2;
-    /* Higher than .dark-overlay */
-    color: #fefeff;
-    font-family: "Martian Mono", monospace;
-    font-size: 1rem;
-    line-height: 1.2;
-    padding: 10px;
-    text-align: left;
-    box-sizing: border-box;
-    border-radius: 4px;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  z-index: 2;
+  color: #fefeff;
+  font-family: "Martian Mono", monospace;
+  font-size: 1rem;
+  line-height: 1.2;
+  padding: 10px;
+  text-align: left;
+  box-sizing: border-box;
+  border-radius: 4px;
 }
-
 
 .release-info h3 {
-    margin: 0;
-    font-size: 2rem;
-    font-weight: normal;
-}
-
-.dark-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    /* Adjust opacity as needed */
-    z-index: 1;
-    /* Positioned below the text overlay (.release-info) */
-    transition: opacity 0.3s ease;
-}
-
-/* Fade out the dark overlay on hover */
-.release-item:hover .dark-overlay {
-    opacity: 0;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: normal;
 }
 
 .release-info p {
-    margin: 5px 0 0;
-    font-size: 0.9rem;
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+}
+
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.release-item:hover .dark-overlay {
+  opacity: 0;
 }
 
 .swiper-pagination {
-    display: none !important;
+  display: none !important;
 }
 
 .swiper-button-prev,
 .swiper-button-next {
-    z-index: 10;
-    /* Brings them to the front */
-    color: #fff;
-    /* Set to a contrasting color */
-    transform: translate(-50%);
+  z-index: 10;
+  color: #fff;
+  transform: translate(-50%);
 }
 
-/* Position them (adjust values as needed) */
 .swiper-button-prev {
-    left: 10px;
+  left: 10px;
 }
 
 .swiper-button-next {
-    right: 10px;
+  right: 10px;
 }
 
-/* Optional: Increase their size */
 .swiper-button-prev:after,
 .swiper-button-next:after {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
-/* 1) Artist Grid Layout */
+/* Artist Grid */
 .artist-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2rem;
-    padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  padding: 2rem;
 }
 
-/* Tablet (>= 768px) */
 @media (min-width: 768px) {
-    .artist-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .artist-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* Desktop (>= 1024px) */
 @media (min-width: 1024px) {
-    .artist-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .artist-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-/* 2) Artist Card Styling */
 .artist-card {
-    position: relative;
-    /* Needed so absolute elements are positioned inside */
-    /* width: 300px;       Example width; adjust as needed */
-    overflow: hidden;
-    /* Hides anything going outside the card bounds */
-    border-radius: 20px;
-    /* Optional rounding for corners */
-    text-align: left;
-    /* If you prefer left-aligned text on the overlay */
-    margin: 0 auto;
-    /* Center the card, if you like */
-    
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  text-align: left;
+  margin: 0 auto;
 }
 
 .artist-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 20px;
-    /* Match the card rounding */
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
 }
 
-/* The overlay that goes on top of the image */
 .artist-info {
-    position: absolute;
-    bottom: 0;
-    /* or top: 50%, left: 50%, etc. if you want it centered */
-    left: 0;
-    width: 100%;
-    color: #fff;
-    /* Text color */
-    padding: 1rem;
-    box-sizing: border-box;
-    /* If you don't want a background behind the text, remove the background-color */
-}
-
-.artist-info h3,
-.artist-info p {
-    margin: 0 0 0.25rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .artist-info h3 {
-    font-size: 3.5rem;
-    /* Adjust as needed */
+  font-size: 3.5rem;
+  margin: 0 0 0.25rem;
 }
 
 .artist-info p {
-    font-size: 0.1 rem;
-    /* Adjust as needed */
-    display: inline-block;
-    /* Allows the element to shrink to fit content */
-    background-color: #414140;
-    /* Dark gray background (adjust as needed) */
-    color: #fff;
-    /* White text */
-    padding: 0.25rem 0.5rem;
-    /* Top/bottom, left/right spacing */
-    border-radius: 40px;
-    /* Slightly rounded corners */
-    font-size: 0.9rem;
-    /* Adjust text size as needed */
-    margin: 0;
+  display: inline-block;
+  background-color: #414140;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  margin: 0;
 }
 
 /* Artist Hero */
 .artist-hero {
-    position: relative;
-    text-align: center;
+  position: relative;
+  text-align: center;
 }
 
 .artist-hero img {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    filter: brightness(70%);
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  filter: brightness(70%);
 }
 
 .artist-hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .artist-hero-text h1 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 /* Artist Details */
 .artist-details {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
 }
 
 .bio,
 .tracks {
-    flex: 1;
-    margin: 1rem;
+  flex: 1;
+  margin: 1rem;
 }
 
 .bio h2,
 .tracks h2 {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .tracks ul li {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Footer */
 .main-footer {
-    background-color: #414140;
-    /* Dark gray */
-    color: #fefeff;
-    /* Off-white */
-    padding: 1rem 2rem;
-    margin-top: 2rem;
+  background-color: #414140;
+  color: #fefeff;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
 }
 
-/* Flex container for the top part of the footer */
 .footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-/* Logo sizing */
 .footer-logo {
-    max-height: 50px;
+  max-height: 50px;
 }
 
-/* Social Icons container */
 .social-icons {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
-/* Social icons styling */
 .social-icons a {
-    display: inline-flex;
-    align-items: center;
-    border-radius: 20px;
-    padding: 0.5rem;
-    justify-content: center;
-    text-decoration: none;
-    transition: background-color 0.2s;
-    margin: 0 5px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 20px;
+  padding: 0.5rem;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  margin: 0 5px;
 }
 
 .social-icons .fa {
-    font-size: 40px;
-    text-align: center;
-    text-decoration: none;
-    color: #fefeff;
-    transition: background-color 0.2s;
-    padding: 0.5rem;
+  font-size: 40px;
+  text-align: center;
+  color: #fefeff;
+  padding: 0.5rem;
 }
 
 .social-icons a:hover {
-    background-color: #fefeff;
-    border-color: #fefeff;
+  background-color: #fefeff;
 }
 
 .social-icons a:hover img {
-    filter: invert(1);
+  filter: invert(1);
 }
 
-/* Horizontal line styling */
 .footer-divider {
-    border: none;
-    border-top: 1px solid #fefeff;
-    margin: 1rem 0;
+  border: none;
+  border-top: 1px solid #fefeff;
+  margin: 1rem 0;
 }
 
-/* Bottom text */
 .footer-bottom {
-    text-align: center;
-    font-size: 0.9rem;
+  text-align: center;
+  font-size: 0.9rem;
 }
 
-/* Responsive adjustments */
+/* Other Responsive Adjustments */
 @media (max-width: 600px) {
-    .release-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        padding: 1rem;
-    }
-
-    .page-banner h1 {
-        font-size: 1.8rem;
-    }
-}
-
-html,
-body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
+  .release-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 1rem;
+  }
+  .page-banner h1 {
+    font-size: 1.8rem;
+  }
 }

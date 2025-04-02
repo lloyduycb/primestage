@@ -8,16 +8,29 @@
 </head>
 <body>
 
+  <!-- HEADER / NAVIGATION -->
   <header class="main-header">
-    <div class="logo">PrimeStage</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="releases.html">Releases</a></li>
-        <li><a href="artist-list.html">Artists</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div class="header-top">
+        <div class="logo">
+            <img src="primestage black.png" alt="PrimeStage logo" />
+        </div>
+
+        <!-- Move nav here -->
+        <nav class="nav-menu">
+            <ul>
+                <li class="martian-mono"><a href="index.html" class="active">Home</a></li>
+                <li class="martian-mono"><a href="releases.html">Releases</a></li>
+                <li class="martian-mono"><a href="artist-list.html">Artists</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hamburger button (for mobile) -->
+        <button class="menu-toggle" aria-label="Toggle Navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>
+</header>
+
 
   <section class="artist-hero">
     <img src="images/artist1-banner.jpg" alt="Artist Banner"/>
