@@ -621,10 +621,7 @@ ul {
 
 .social-icons a:hover {
   background-color: #fefeff;
-}
-
-.social-icons a:hover img {
-  filter: invert(1);
+  color: #414140;
 }
 
 .footer-divider {
@@ -646,5 +643,9 @@ ul {
   }
   .page-banner h1 {
     font-size: 1.8rem;
+  }
+  .social-icons a:hover {
+    background-color: transparent !important;
+    color: inherit !important;
   }
 }
