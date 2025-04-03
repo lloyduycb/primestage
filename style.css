@@ -224,7 +224,7 @@ ul {
   font-size: 1rem;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
@@ -457,7 +457,8 @@ ul {
   /* ❌ Hide nav arrows on mobile */
   .swiper-button-prev,
   .swiper-button-next {
-    display: none !important; /* ← force override Swiper's inline styles */
+    display: none !important;
+    /* ← force override Swiper's inline styles */
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
@@ -531,29 +532,206 @@ ul {
   margin: 0;
 }
 
-/* Artist Hero */
-.artist-hero {
+/* --------------------
+   HERO SECTION
+--------------------- */
+.artist-hero.dark {
   position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 3rem 5%;
+}
+
+.artist-hero.dark img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(45%);
+  z-index: 1;
+}
+
+/* CONTAINER */
+.artist-hero-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  z-index: 2;
+  position: relative;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* LEFT SIDE */
+.artist-left {
+  color: white;
+  max-width: 60%;
+}
+
+.left-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.left-text h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 8rem;
+  letter-spacing: 0.2px;
+  margin-bottom: 0.2rem;
+  line-height: 1;
+  /* ← key line */
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+  font-weight: 400;
+}
+
+.artist-tags {
+  display: flex;
+  gap: 0.6rem;
+  /* slightly tighter gap between tags */
+  flex-wrap: wrap;
+  margin-top: 0;
+}
+
+.artist-tags span {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-family: "Martian Mono", monospace;
+  font-size: 0.7rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+}
+
+/* RIGHT SIDE */
+.artist-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.right-buttons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 1rem;
+  color: #fff;
+  border-radius: 40px;
+  font-family: "Martian Mono", monospace;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.right-buttons a i {
+  font-size: 3rem;
+}
+
+.artist-buttons a:hover {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .artist-hero.dark {
+    padding: 2rem;
+    align-items: flex-end;
+  }
+
+  .artist-hero-text {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .artist-left {
+    max-width: 100%;
+  }
+
+  .artist-left h1 {
+    font-size: 4rem;
+  }
+
+  .artist-tags span {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .right-buttons {
+    justify-content: flex-start;
+  }
+
+  .right-buttons a {
+    padding: 0.2rem 0.6rem;
+  }
+
+  .right-buttons a i {
+    font-size: 3rem;
+  }
+}
+
+/* --------------------
+   CLEAN WHITE SECTION
+--------------------- */
+.artist-profile {
+  background-color: #fff;
+  padding: 3rem 2rem;
   text-align: center;
 }
 
-.artist-hero img {
+.artist-profile h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Tracks */
+.release-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.release-card {
+  width: 180px;
+  text-align: center;
+}
+
+.release-card img {
   width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  filter: brightness(70%);
 }
 
-.artist-hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* Bio */
+.artist-bio {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
 }
 
-.artist-hero-text h1 {
-  font-size: 2.5rem;
+.artist-bio h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  font-weight: 900;
 }
+
+.artist-bio p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
 
 /* Artist Details */
 .artist-details {
@@ -576,6 +754,22 @@ ul {
 .tracks ul li {
   margin-bottom: 0.5rem;
 }
+
+.release-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .artist-img {
+    height: 100vh;
+    /* or a custom shorter value like 80vh */
+    object-fit: cover;
+    /* Increase negative value to crop more */
+  }
+}
+
 
 /* Footer */
 .main-footer {
@@ -641,9 +835,11 @@ ul {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     padding: 1rem;
   }
+
   .page-banner h1 {
     font-size: 1.8rem;
   }
+
   .social-icons a:hover {
     background-color: transparent !important;
     color: inherit !important;
