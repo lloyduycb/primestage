@@ -214,10 +214,10 @@ ul {
 /* Call-to-action button */
 .btn-primary {
   display: inline-block;
-  background-color: #ffffff;
-  color: #001f46;
+  background-color: transparent;
+  color: #ffffff;
   padding: 1rem 1.6rem;
-  border: none;
+  border: 4px solid #ffffff;
   border-radius: 40px;
   font-weight: bold;
   font-family: "Martian Mono", monospace;
@@ -229,8 +229,8 @@ ul {
 }
 
 .btn-primary:hover {
-  background-color: #001f46;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #001f46;
 }
 
 /* ✅ Responsive breakpoints */
