@@ -19,7 +19,22 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "VADO.",
       image: "vado.jpg",
       videoUrl: "https://www.youtube.com/watch?v=pxol3DkP1EQ"
-    }
+    },
+    {
+      title: "MAMMOO-T (CASH FLOW).",
+      image: "EQ5bPkKM6fs-HD.jpg",
+      videoUrl: "https://www.youtube.com/watch?v=EQ5bPkKM6fs"
+    },
+    {
+      title: "SPACE JUNGLE.",
+      image: "TH43WtZcpqE-HD.jpg",
+      videoUrl: "https://youtu.be/TH43WtZcpqE?si=lvtl1WVQgTn_0d5K"
+    },
+    {
+      title: "UNINVITED.",
+      image: "9zEfp60YAhE-HD.jpg",
+      videoUrl: "https://youtube.com/watch?v=9zEfp60YAhE"
+    },
   ];
 
   const swiperWrapper = document.querySelector(".swiper-wrapper");
