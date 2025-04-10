@@ -501,13 +501,25 @@ ul {
   margin: 0 auto;
 }
 
+/* This stays general for all cards */
 .artist-card img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
   border-radius: 20px;
 }
 
+.artist-card.reverse-crop {
+  height: 500px; /* or match other cards */
+}
+
+.artist-card.reverse-crop img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom; /* crop from bottom up */
+}
 .artist-info {
   position: absolute;
   bottom: 0;
